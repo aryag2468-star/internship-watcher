@@ -308,7 +308,8 @@
   "notifications": {
     "strategy": "email_each_sweep_with_new_matches",
     "notify_on_first_run": false,
-    "max_roles_per_email": 25
+    "max_roles_per_email": 50,
+    "max_lower_tier_roles_per_sweep": 25
   },
   "source_policy": {
     "must_cover": ["Roblox", "Boeing", "Capital One"],

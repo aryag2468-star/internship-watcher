@@ -402,6 +402,32 @@ class WatcherPersonalizationTests(unittest.TestCase):
         self.assertIn("remaining 5 matches", html)
         self.assertEqual(html.count("https://example.com/"), 25)
 
+    def test_new_match_batches_include_every_high_priority_role(self):
+        jobs = []
+        for i in range(87):
+            jobs.append({
+                "title": f"High Priority Intern {i}", "company": "Example",
+                "location": "", "url": f"https://example.com/high/{i}",
+                "tier": "HIGH PRIORITY", "score": 60,
+            })
+        for i in range(40):
+            jobs.append({
+                "title": f"Good Match Intern {i}", "company": "Example",
+                "location": "", "url": f"https://example.com/good/{i}",
+                "tier": "GOOD MATCH", "score": 30,
+            })
+        batches = watcher.build_new_match_email_batches(
+            {"Example": jobs}, lower_tier_limit=25, batch_size=50
+        )
+        delivered = [job for batch in batches for firm_jobs in batch.values() for job in firm_jobs]
+        self.assertEqual(len(batches), 3)
+        self.assertEqual(sum(j["tier"] == "HIGH PRIORITY" for j in delivered), 87)
+        self.assertEqual(sum(j["tier"] == "GOOD MATCH" for j in delivered), 25)
+        self.assertTrue(all(sum(len(v) for v in batch.values()) <= 50 for batch in batches))
+
+    def test_new_match_batches_need_no_email_when_empty(self):
+        self.assertEqual(watcher.build_new_match_email_batches({}), [])
+
     def test_fit_growth_model_labels_stretch_and_current_fit(self):
         profile = {
             "role_profiles": {

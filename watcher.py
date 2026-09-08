@@ -1378,6 +1378,38 @@ def build_email_html(grouped, baseline=False, filters=None, max_roles=None):
     return "\n".join(parts)
 
 
+def build_new_match_email_batches(grouped, lower_tier_limit=25, batch_size=50):
+    """Return email-sized groups while never dropping a HIGH PRIORITY match.
+
+    Lower tiers remain capped across the sweep. High-priority results are split
+    across as many messages as necessary, protecting deliverability without
+    hiding the strongest opportunities.
+    """
+    jobs = []
+    for firm, firm_jobs in grouped.items():
+        for job in firm_jobs:
+            item = dict(job)
+            item.setdefault("company", firm)
+            jobs.append(item)
+    jobs.sort(key=lambda j: (-j.get("score", 0),
+                             (j.get("company") or "").lower(),
+                             (j.get("title") or "").lower()))
+    high = [j for j in jobs if j.get("tier") == "HIGH PRIORITY"]
+    lower = [j for j in jobs if j.get("tier") != "HIGH PRIORITY"]
+    if lower_tier_limit is not None:
+        lower = lower[:max(0, int(lower_tier_limit))]
+
+    selected = high + lower
+    size = max(1, int(batch_size))
+    batches = []
+    for start in range(0, len(selected), size):
+        batch = {}
+        for job in selected[start:start + size]:
+            batch.setdefault(job.get("company") or "Unknown", []).append(job)
+        batches.append(batch)
+    return batches
+
+
 def send_email(subject, html):
     host = os.environ.get("SMTP_HOST") or "smtp.gmail.com"
     port = int(os.environ.get("SMTP_PORT") or "465")
@@ -1967,14 +1999,19 @@ def main():
     else:
         total_new = sum(len(v) for v in grouped_new.values())
         if total_new:
-            send_email(
-                f"[Internship Watcher] {total_new} newly discovered role(s)",
-                build_email_html(
-                    grouped_new,
-                    filters=filters,
-                    max_roles=config.get("notifications", {}).get("max_roles_per_email"),
-                ),
+            notifications = config.get("notifications", {})
+            batches = build_new_match_email_batches(
+                grouped_new,
+                lower_tier_limit=notifications.get("max_lower_tier_roles_per_sweep", 25),
+                batch_size=notifications.get("max_roles_per_email", 50),
             )
+            for index, batch in enumerate(batches, 1):
+                batch_count = sum(len(v) for v in batch.values())
+                suffix = f" ({index}/{len(batches)})" if len(batches) > 1 else ""
+                send_email(
+                    f"[Internship Watcher] {batch_count} newly discovered role(s){suffix}",
+                    build_email_html(batch, filters=filters),
+                )
         else:
             print("No new roles this run.")
 
