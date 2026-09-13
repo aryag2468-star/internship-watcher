@@ -1,0 +1,39 @@
+{
+  "filters": {
+    "priority_locations": [
+      "Washington, DC",
+      "Washington, D.C.",
+      "District of Columbia",
+      "Maryland",
+      "Tallahassee, FL",
+      "Tallahassee, Florida"
+    ]
+  },
+  "ranking": {
+    "preferred_companies": [
+      "U.S. Department of Justice",
+      "Department of Justice",
+      "U.S. Department of State",
+      "Department of State",
+      "U.S. Department of Commerce",
+      "Office of the U.S. Trade Representative"
+    ],
+    "preferred_locations": [
+      "Washington, DC",
+      "Washington, D.C.",
+      "District of Columbia",
+      "Maryland",
+      "Tallahassee, FL",
+      "Tallahassee, Florida"
+    ]
+  },
+  "profile": {
+    "us_citizen": null,
+    "holds_security_clearance": null,
+    "open_to_clearance": null,
+    "graduation_years_considered_relevant": [
+      2029
+    ],
+    "gpa": null
+  }
+}
