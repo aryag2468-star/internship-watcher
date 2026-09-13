@@ -741,19 +741,25 @@
       "max_workers": 10,
       "critical": true
     },
-    {
-      "name": "USAJOBS (NASA / DOE labs / NSA / federal research)",
-      "ats": "usajobs",
-      "keywords": [
-        "software intern",
-        "student trainee computer science",
-        "research intern",
-        "machine learning intern",
-        "data science intern",
-        "pathways intern engineering"
-      ],
-      "note": "needs free USAJOBS_API_KEY + USAJOBS_EMAIL secrets"
-    },
+{
+  "name": "USAJOBS (Legal / Policy / International Affairs)",
+  "ats": "usajobs",
+  "keywords": [
+    "student trainee legal",
+    "student trainee law",
+    "student trainee international relations",
+    "student trainee international affairs",
+    "student trainee foreign affairs",
+    "student trainee public policy",
+    "student trainee government affairs",
+    "student trainee trade",
+    "student trainee international trade",
+    "student trainee political science",
+    "pathways legal intern",
+    "pathways policy intern"
+  ],
+  "note": "needs free USAJOBS_API_KEY + USAJOBS_EMAIL secrets"
+}
     {
       "name": "Page: NSF ETAP (all NSF REUs)",
       "ats": "pagewatch",
