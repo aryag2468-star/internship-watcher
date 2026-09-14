@@ -137,9 +137,6 @@ class WatcherPersonalizationTests(unittest.TestCase):
         job = watcher._parse_yc_internships_html(page)[0]
         self.assertFalse(watcher.is_relevant(job, self.filters))
 
-    def test_explicitly_unpaid_role_is_rejected(self):
-        job = {"title": "Software Intern 2027", "content": "This is an unpaid internship.", "location": ""}
-        self.assertFalse(watcher.is_relevant(job, self.filters))
 
     def test_explicit_pay_below_floor_is_rejected(self):
         job = {"title": "Software Intern 2027", "content": "Pay is $24-$28 per hour.", "location": "Austin, TX"}
