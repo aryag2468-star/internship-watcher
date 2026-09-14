@@ -4399,6 +4399,32 @@
       "ats": "pagewatch",
       "url": "https://undergradresearch.gatech.edu/",
       "digest": true
-    }
+    },
+    {
+  "name": "DOJ Undergraduate Internships",
+  "ats": "pagewatch",
+  "url": "https://www.justice.gov/ola/employment-and-internship-opportunities",
+  "watch_keywords": [
+    "2027",
+    "intern",
+    "internship",
+    "undergraduate",
+    "student"
+  ],
+  "note": "DOJ Office of Legislative Affairs undergraduate internships"
+},
+{
+  "name": "U.S. Department of State Student Internships",
+  "ats": "pagewatch",
+  "url": "https://careers.state.gov/interns-fellows/student-internship-program/",
+  "watch_keywords": [
+    "2027",
+    "intern",
+    "internship",
+    "student",
+    "foreign affairs"
+  ],
+  "note": "State Department undergraduate foreign affairs internships"
+}
   ]
 }
