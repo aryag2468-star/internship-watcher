@@ -865,7 +865,7 @@ def is_relevant(job, filters):
 
     # Never recommend explicitly unpaid work. Missing compensation remains neutral.
   
-                         (job.get("content", "") or "")[:4000]]).lower()
+                        
     
         
 
