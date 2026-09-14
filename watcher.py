@@ -864,10 +864,10 @@ def is_relevant(job, filters):
         return _drop("no-intern-word", title)
 
     # Never recommend explicitly unpaid work. Missing compensation remains neutral.
-    pay_text = " ".join([job.get("compensation", "") or "",
+  
                          (job.get("content", "") or "")[:4000]]).lower()
-    if re.search(r"\b(?:unpaid|no compensation|without compensation)\b", pay_text):
-        return _drop("unpaid", title)
+    
+        
 
     minimum_pay = filters.get("minimum_hourly_compensation")
     pay_range = _hourly_compensation_range(job)
