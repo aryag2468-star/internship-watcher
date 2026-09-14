@@ -759,7 +759,7 @@
     "pathways policy intern"
   ],
   "note": "needs free USAJOBS_API_KEY + USAJOBS_EMAIL secrets"
-}
+},
     {
       "name": "Page: NSF ETAP (all NSF REUs)",
       "ats": "pagewatch",
