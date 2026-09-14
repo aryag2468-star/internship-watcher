@@ -4425,6 +4425,36 @@
     "foreign affairs"
   ],
   "note": "State Department undergraduate foreign affairs internships"
+},
+    {
+  "name": "USTR Student Internship Program",
+  "ats": "pagewatch",
+  "url": "https://ustr.gov/about-us/office-human-capital-and-services/careers/student-internship-program",
+  "watch_keywords": [
+    "2027",
+    "intern",
+    "internship",
+    "student",
+    "trade policy",
+    "Spring 2027",
+    "Summer 2027"
+  ],
+  "note": "Office of the U.S. Trade Representative student internships"
+},
+{
+  "name": "CSIS Internships",
+  "ats": "pagewatch",
+  "url": "https://www.csis.org/about/careers-culture/internships",
+  "watch_keywords": [
+    "2027",
+    "intern",
+    "internship",
+    "spring",
+    "summer",
+    "international",
+    "foreign policy"
+  ],
+  "note": "Center for Strategic and International Studies internships"
 }
   ]
 }
