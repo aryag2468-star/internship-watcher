@@ -4518,6 +4518,53 @@
     "legislative"
   ],
   "note": "Maryland and Washington DC Senate internships"
+},
+{
+  "name": "Cornerstone Government Affairs Internships",
+  "ats": "pagewatch",
+  "url": "https://cgagroup.com/internships/",
+  "watch_keywords": [
+    "Spring 2027",
+    "Summer 2027",
+    "intern",
+    "internship",
+    "policy",
+    "government relations",
+    "federal",
+    "Washington"
+  ],
+  "note": "DC government relations and public policy internships"
+},
+{
+  "name": "International Justice Mission Internships",
+  "ats": "pagewatch",
+  "url": "https://www.ijm.org/careers",
+  "watch_keywords": [
+    "2027",
+    "intern",
+    "internship",
+    "policy",
+    "advocacy",
+    "human rights",
+    "international",
+    "Washington"
+  ],
+  "note": "International human rights, policy and advocacy internships"
+},
+{
+  "name": "SelectUSA Internships",
+  "ats": "pagewatch",
+  "url": "https://www.trade.gov/selectusa-internships",
+  "watch_keywords": [
+    "2027",
+    "intern",
+    "internship",
+    "student",
+    "international trade",
+    "investment policy",
+    "Washington"
+  ],
+  "note": "Commerce Department international investment and trade-related internships"
 }
   ]
 }
