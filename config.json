@@ -4485,6 +4485,39 @@
     "foreign policy"
   ],
   "note": "Atlantic Council international affairs internships in Washington DC"
+},
+    {
+  "name": "U.S. Senate Employment Office Internships",
+  "ats": "pagewatch",
+  "url": "https://careers.employment.senate.gov/",
+  "watch_keywords": [
+    "intern",
+    "internship",
+    "legislative",
+    "policy",
+    "student",
+    "Spring 2027",
+    "Summer 2027",
+    "Washington"
+  ],
+  "note": "Senate personal office and committee internships"
+},
+{
+  "name": "Senator Angela Alsobrooks Internships",
+  "ats": "pagewatch",
+  "url": "https://www.alsobrooks.senate.gov/services/internships/",
+  "watch_keywords": [
+    "Spring 2027",
+    "Summer 2027",
+    "intern",
+    "internship",
+    "Washington",
+    "Baltimore",
+    "Prince George's County",
+    "policy",
+    "legislative"
+  ],
+  "note": "Maryland and Washington DC Senate internships"
 }
   ]
 }
